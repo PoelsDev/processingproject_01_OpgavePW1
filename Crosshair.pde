@@ -1,10 +1,23 @@
 class Crosshair
 {  
-  void tekenCrosshair()
+  int w;
+  int h;
+  int xpos;
+  int ypos;
+  
+  Crosshair(int x,int y, int w, int h)
   {
-    line(0, 0, mouseX, mouseY);
-    line(width, height, mouseX, mouseY);
-    line(0, height, mouseX, mouseY);
-    line(width, 0, mouseX, mouseY);
+    this.w = w;
+    this.h = h;
+    xpos = x;
+    ypos = y;    
+  }
+  
+  void draw()
+  {
+    line(xpos, ypos, mouseX, mouseY);
+    line(w, h, mouseX, mouseY);
+    line(xpos, h, mouseX, mouseY);
+    line(w, ypos, mouseX, mouseY);
   }
 }
